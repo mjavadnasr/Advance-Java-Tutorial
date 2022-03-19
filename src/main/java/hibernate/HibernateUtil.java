@@ -18,14 +18,14 @@ public class HibernateUtil {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER,"org.postgresql.Driver");
-                settings.put(Environment.URL,"jdbc:postgresql://localhost/postgres");
+                settings.put(Environment.URL,"jdbc:postgresql://localhost/test");
                 settings.put(Environment.USER,"postgres");
-                settings.put(Environment.PASS,"postgres");
+                settings.put(Environment.PASS,"postgre");
                 settings.put(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect");
                 settings.put(Environment.SHOW_SQL,true);
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS,"thread");
                 configuration.setProperties(settings);
-                configuration.addAnnotatedClass(User.class);
+                configuration.addAnnotatedClass(users.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 

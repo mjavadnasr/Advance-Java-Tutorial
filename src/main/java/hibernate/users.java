@@ -4,8 +4,8 @@ package hibernate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "student")
-public class User {
+//@Table(name = "users")
+public class users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -15,11 +15,11 @@ public class User {
     private String name;
 
 
-    public User() {
+    public users() {
         super();
     }
 
-    public User(long id, String name) {
+    public users(long id, String name) {
         this.id=id;
         this.name = name;
     }

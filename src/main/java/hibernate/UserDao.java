@@ -7,11 +7,11 @@ import java.util.List;
 
 public class UserDao {
 
-    public void save(User user) {
+    public void save(users users) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(user);
+            session.save(users);
             transaction.commit();
 
 
@@ -21,11 +21,11 @@ public class UserDao {
         }
     }
 
-    public void updateUser(User user) {
+    public void updateUser(users users) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.saveOrUpdate(user);
+            session.saveOrUpdate(users);
 
             transaction.commit();
 
@@ -39,10 +39,10 @@ public class UserDao {
     public void gatUserByID(long id)
     {
         Transaction transaction = null;
-        User user = null;
+        users users = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
-            session.get(User.class, id);
+            session.get(users.class, id);
             transaction.commit();
 
 
@@ -56,10 +56,10 @@ public class UserDao {
         }
     }
 
-    public List<User> getAllStudents()
+    public List<users> getAllStudents()
     {
         Transaction transaction = null;
-        List<User> users = null;
+        List<users> users = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession())
         {
             transaction = session.beginTransaction();
@@ -80,8 +80,8 @@ public class UserDao {
         try(Session session = HibernateUtil.getSessionFactory().openSession())
         {
             transaction = session.beginTransaction();
-            User user = session.get(User.class,id);
-            session.delete(user);
+            users users = session.get(users.class,id);
+            session.delete(users);
 
             transaction.commit();
         }

@@ -2,15 +2,14 @@ package hibernate;
 
 public class Main {
     public static void main(String[] args) {
-//        Student student = new Student(1,"javad" , "nasrolla");
-//        Student student1 = new Student(2,"ali" , "alavi");
+        users users = new users(1,"javad");
+        users users1 = new users(2,"ali");
 //
         UserDao dao = new UserDao();
-//
-//        dao.save(student);
-//        dao.save(student1);
+//       dao.save(user);
+//        dao.save(user1);
 
-//        dao.deleteStudentByID(1);
-        dao.getAllStudents();
+        dao.deleteUserByID(1);
+//        dao.getAllStudents();
     }
 }
